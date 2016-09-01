@@ -29,7 +29,7 @@
         <!-- Password input-->
         <div class="form-group row">
           <div class="col-xs-12">
-            <input id="passwor" name="parola" type="password" placeholder="Parola*" class="form-control input-md" required="">
+            <input id="passwor" name="parola" type="password" data-id="create-pass" placeholder="Parola*" class="form-control input-md" required="">
           </div>
         </div>
         
