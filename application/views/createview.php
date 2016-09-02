@@ -29,7 +29,16 @@
         <!-- Password input-->
         <div class="form-group row">
           <div class="col-xs-12">
-            <input id="passwor" name="parola" type="password" data-id="create-pass" placeholder="Parola*" class="form-control input-md" required="">
+            <input id="passwor" name="parola" type="password" data-id="create-pass" onkeypress="return cleanInput(event)" 
+                placeholder="Parola*" class="form-control input-md" required="">
+            <div id="pass-meter" class="pass-meter">
+              <div id="pass-meter-1" class="single-meter"></div>
+              <div id="pass-meter-2" class="single-meter"></div>
+              <div id="pass-meter-3" class="single-meter"></div>
+              <div id="pass-meter-4" class="single-meter"></div>
+            </div>
+            <span id="pass-meter-icon" class="pass-meter-aux"></span>
+            <span id="pass-meter-info" class="pass-meter-aux"></span>
           </div>
         </div>
         
