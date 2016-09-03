@@ -56,25 +56,34 @@ $(document).ready(function(){
     if( inputVal ){
       // iterate over each predefined password pattern
       $.each(inputValidation, function(currentMatchedIndex, obj){
+        
         // check regex match
         if(inputVal.match(obj.regex)){
+
+          console.log(globMatchedIndex, currentMatchedIndex);
+        
           // iterate over meter elements
           $.each($meterElements, function(elemIndex, meterElem){
             // assing corresponding color
             $(meterElem).css('background-color', obj.color);
-            // break each loop match index
+            // break each loop on index match
             if( elemIndex === currentMatchedIndex ){ return false; }
           });
   
           // when the user starts to erase the password, the coloring has to be reset to the default value
           // the second condition is for avoinding assignment to undefined pass-meter elem, since there is the 5th case for surpassed
           if(( globMatchedIndex > currentMatchedIndex ) && ( globMatchedIndex < $meterElements.length )){
-  
-            // get pass-meter last colored element after match
-            var meterElem = $meterElements[globMatchedIndex];
-  
-            // assign default color
-            $(meterElem).css('background-color', 'lightgray');
+            
+            var tmpIndex = globMatchedIndex;
+            // loop required to cover cases where the erased char downgrades the remaining password with more than one level
+            while( tmpIndex > currentMatchedIndex ){
+              // get pass-meter last colored element after match
+              var meterElem = $meterElements[tmpIndex];
+              // assign default color
+              $(meterElem).css('background-color', 'lightgray');
+              // decrease index
+              tmpIndex--;
+            }
           }
   
           // assign deduced strength type
