@@ -7,6 +7,12 @@ class Account extends CI_Controller {
         
         $data['title'] = 'CREATE ACCOUNT';
         $data['pageContent'] = "createview.php";
-        $this->load->view('layout', $data);
+        $this -> load -> view('layout', $data);
+    }
+    
+    function login_user() {
+        $data['title'] = 'LOGIN';
+        $data['pageContent'] = "loginview.php";
+        $this -> load -> view('layout', $data);
     }
 }
