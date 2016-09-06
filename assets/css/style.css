@@ -1,0 +1,45 @@
+#login{
+    width:381px;
+    border-radius:7px;
+    font-family:raleway;
+    border:2px solid #ccc;
+    padding:10px 40px 25px;
+    margin: 0 auto;
+    background-color: transparent;
+    box-shadow: 0px 5px 30px #777;
+}
+input[type=text],input[type=password]{
+    font-family: "Century Gothic", cursive, sans-serif;
+    width: 300px;
+    padding: 20px 0px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #435160;
+    outline: none;
+    color: #6D7781;
+    font-size: 15px;
+    padding-left: 10px;
+}
+.login-button{
+    font-family: "Century Gothic", cursive, sans-serif;
+    background: #1FCE6D;
+    border: 0;
+    width: 150px;
+    height: 38px;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 10%;
+    margin-left: 23%;
+}
+ span{
+      display:inline-block;
+      width:15%;
+      margin-top: 15px;
+      text-align: center;
+}
+.highlight{
+	background-color: #93f99a;
+	color: black;
+}
