@@ -43,3 +43,18 @@ input[type=text],input[type=password]{
 	background-color: #93f99a;
 	color: black;
 }
+
+.col-sm-9{
+    text-align: right;
+  
+}
+
+
+.container{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+header{
+    border-bottom: solid;
+}
