@@ -9,7 +9,6 @@
             <div class="form-group col-xs-12 nume">
                 <input id="nume" name="nume" autocomplete="off" type="text" placeholder="Nume*" class="form-control input-md" >
             </div>
-            
         </div>
 
          <!--localitate input-->
@@ -217,4 +216,20 @@
        
 //   } );
 </script>-->
+
+</div>
+<!--Login using Facebook account-->
+<div id="fb-root"></div>
+
+<script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=1285490414803865";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+    
+<div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>
 
