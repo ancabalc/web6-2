@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' =>  getenv('IP),
+	'hostname' =>  getenv('IP'),
 	'username' =>  getenv('C9_USER'),
-	'password' => '',
-	'database' => '',
+	'password' => 'parola',
+	'database' => 'web6_upload',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
