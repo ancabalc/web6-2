@@ -14,8 +14,22 @@
 </head>
 <body>
     <header>
-        header
+        <div class = "container">
+        <div class = "col-sm-3">
+            <h3>LOGO</h3>
+        </div>
+
+    <div class = "col-sm-9" >
+    
+        <a href="#"style = "color:black">Cereri |</a>
+        
+        <a href="#"style = "color:black">Creeaza cont |</a>
+        <a href="#"style = "color:black">Intra in cont</a>
+
+    </div>
+    </div>
     </header>
+    
     
     <div class="content">
         <?php include $pageContent; ?>
