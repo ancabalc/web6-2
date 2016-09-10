@@ -33,22 +33,54 @@ input[type=text],input[type=password]{
     margin-top: 10%;
     margin-left: 23%;
 }
- span{
-      display:inline-block;
-      width:15%;
-      margin-top: 15px;
-      text-align: center;
+span{
+    display:inline-block;
+    width:15%;
+    margin-top: 15px;
+    text-align: center;
 }
 .highlight{
 	background-color: #93f99a;
 	color: black;
 }
+.pass-meter{
+    float: left;
+    position: relative;
+    margin-top: 3px;
+    width: 100%;
+}
+.single-meter{
+    width: 24%;
+    height: 4px;
+    margin-top: 1px;
+    margin-right: 1%;
+    background-color: lightgray;
+    position: relative;
+    float: left;
+}
+#pass-meter-icon{
+    background-image:url("../img/info-icon.png");
+    background-size:20px 20px;
+    background-repeat:no-repeat;
+    width: 20px;
+}
+#pass-meter-info{
+    font-family: 'PT Sans',sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    text-align: right;
+    width: 100px;
+}
+.pass-meter-aux{
+    margin: 1px 1px 1px 5px;
+    height: 20px;
+    position: relative;
+    float:right;
 
 .col-sm-9{
-    text-align: right;
-  
+    text-align: right; 
 }
-
 
 .container{
     margin-top: 10px;

@@ -28,8 +28,17 @@
          <!--Password input-->
         <div class=" row">
             <div class="form-group col-xs-12">
-                <input id="parola" name="parola" type="password" data-container="body"   data-toggle="popover" data-trigger="focus" data-placement="left" data-content="low"
-  Popover on left data-id="create-pass" placeholder="Parola*" class="form-control input-md" >
+                <input id="parola" name="parola" type="password" data-container="body" data-id="create-pass" onkeypress="return cleanInput(event)"
+                data-toggle="popover" data-trigger="focus" data-placement="left" data-content="low"
+                Popover on left data-id="create-pass" placeholder="Parola*" class="form-control input-md" >
+                <div id="pass-meter" class="pass-meter">
+                    <div id="pass-meter-1" class="single-meter"></div>
+                    <div id="pass-meter-2" class="single-meter"></div>
+                    <div id="pass-meter-3" class="single-meter"></div>
+                    <div id="pass-meter-4" class="single-meter"></div>
+                </div>
+                <span id="pass-meter-icon" class="pass-meter-aux"></span>
+                <span id="pass-meter-info" class="pass-meter-aux"></span>
             </div>
         </div>
         
