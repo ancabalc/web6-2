@@ -4,7 +4,7 @@ $(document).ready(function(){
   var $passField = $('[data-id="create-pass"]');
   var $meterElements = $passField.next(`#pass-meter`).children();
   var $passStrInfo = $passField.nextAll(`#pass-meter-info`);
-  var $createButton = $('#singlebutton');
+  var $createButton = $('#submitButton');
 
   if( !$passField.val() ){
     // disable create button if empty
