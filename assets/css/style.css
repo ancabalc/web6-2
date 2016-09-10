@@ -4,12 +4,12 @@
     font-family:raleway;
     border:2px solid #ccc;
     padding:10px 40px 25px;
-    margin-top:70px;
-    margin-left: 100px;
-    background-color:#2E3740;
+    margin: 0 auto;
+    background-color: transparent;
     box-shadow: 0px 5px 30px #777;
 }
 input[type=text],input[type=password]{
+    font-family: "Century Gothic", cursive, sans-serif;
     width: 300px;
     padding: 20px 0px;
     background: transparent;
@@ -18,18 +18,20 @@ input[type=text],input[type=password]{
     outline: none;
     color: #6D7781;
     font-size: 15px;
-    padding-left: 5px;
+    padding-left: 10px;
 }
-.buttons{
+.login-button{
+    font-family: "Century Gothic", cursive, sans-serif;
     background: #1FCE6D;
     border: 0;
-    width: 300px;
-    height: 40px;
+    width: 150px;
+    height: 38px;
     border-radius: 3px;
     color: #fff;
     font-size: 15px;
     cursor: pointer;
-    margin-top: 15px;
+    margin-top: 10%;
+    margin-left: 23%;
 }
 span{
     display:inline-block;
@@ -75,4 +77,16 @@ span{
     height: 20px;
     position: relative;
     float:right;
+
+.col-sm-9{
+    text-align: right; 
+}
+
+.container{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+header{
+    border-bottom: solid;
 }
