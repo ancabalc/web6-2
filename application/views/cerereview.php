@@ -17,7 +17,7 @@
             <input type="text" name="sumar" placeholder="Sumar cerere"></br>
             <input type="text" name="categorie" placeholder="Categorie->Select"></br>
             <input type="text" name="descriere" placeholder="Descriere cerere"></br>
-        <input type="submit" value="Save"/>
+        <input id="createApp" type="submit" value="Save"/>
         </div>
       
      
