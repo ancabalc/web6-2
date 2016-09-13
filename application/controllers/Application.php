@@ -1,11 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-var_dump($_POST);
-// var_dump($_SERVER);
+require APPPATH.'helpers/ajax_response.php';
 
 class Application extends CI_Controller {
-
+    
     public function create() {
         require APPPATH . "models/applicationsmodel.php";
 
@@ -25,5 +24,14 @@ class Application extends CI_Controller {
         $result = $categoriesModel->getCategories();
         
         return $result;
+    }
+
+    function getAll(){
+        $appModel = new ApplicationModel();
+        
+        $applications = $appModel-> getAll();
+        
+        sendResponseToJSON($applications);
+
     }
 }
