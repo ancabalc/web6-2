@@ -1,25 +1,26 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-    var_dump($_POST);
+require APPPATH.'models/applicationsmodel.php';
+require APPPATH.'helpers/ajax_response.php';
 
 class Application extends CI_Controller {
+    
 
-    public function create() {
-
-        $data['title'] = 'CREARE CERERE';
-        $data['pageContent'] = "cerereview.php";
-        $this -> load -> view('layout', $data);
-
-        var_dump($_POST);
-        var_dump($_SERVER);
-
+    function create() {
 
     }
     
     
     
-    
+    function getAll(){
+        $appModel = new ApplicationModel();
+        
+        $applications = $appModel-> getAll();
+        
+        sendResponseToJSON($applications);
+
+    }
     
     
 }
