@@ -1,14 +1,12 @@
-<?php    
-
-
+<?php
     class DB {
         protected $dbh;
         
         function __construct() {
-             $CI =& get_instance();
-             $CI->load->database();
+            $CI =& get_instance();
+
             try {
-               $this->dbh = new PDO('mysql:host=' . $CI->db->hostname .';dbname=' . $CI->db->database, $CI->db->username, $CI->db->password);
+                $this->dbh = new PDO('mysql:host=' . $CI->config->item('hostname') .';dbname=' . $CI->config->item('database'), $CI->config->item('username'), $CI->config->item('password'));
             } catch (PDOException $e) {
                 print "Error!:" . $e->getMessage() . "<br/>";
             die();
@@ -16,7 +14,4 @@
         }
     }
     
-
-           
-        
 ?>

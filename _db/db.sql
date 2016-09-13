@@ -16,9 +16,9 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
 
-CREATE DATABASE `web6_upload`;
+CREATE DATABASE `webapp_services`;
 
-use `web6_upload`;
+use `webapp_services`;
 
 --
 -- Database: `db`
@@ -34,7 +34,6 @@ CREATE TABLE IF NOT EXISTS `users` (\
 
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
-  `address` varchar(255) DEFAULT NULL,
   `city` varchar(255) DEFAULT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) DEFAULT NULL,
