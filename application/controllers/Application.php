@@ -46,6 +46,13 @@ class Application extends CI_Controller {
 
     }
     
+    function getAppByCat(){
+        $appModel = new ApplicationModel();
+        $applications = $appModel-> getApplicationsByCateg($_GET['id']);
+        
+        sendResponseToJSON($applications);
+    }
+    
     function user_applications () {
         require APPPATH.'models/applicationsmodel.php';
         $applicationModel = new ApplicationModel();
