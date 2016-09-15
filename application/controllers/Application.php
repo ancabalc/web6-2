@@ -64,6 +64,13 @@ class Application extends CI_Controller {
         sendResponseToJSON($applications);
     }
     
+    function getAppByCat(){
+        $appModel = new ApplicationModel();
+        $applications = $appModel-> getApplicationsByCateg($_GET['id']);
+        
+        sendResponseToJSON($applications);
+    }
+    
     function user_applications () {
         $applicationModel = new ApplicationModel();
         $list = $applicationModel->getApplicationsByUser(1);

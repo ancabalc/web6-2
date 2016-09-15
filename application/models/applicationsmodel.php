@@ -40,5 +40,14 @@ class ApplicationModel extends DB {
     return $sth->fetchAll(PDO::FETCH_ASSOC);
 
   }
+  
+   function getApplicationsByCateg($id) {
+    $params = [':id' => $id]; 
+    $sql = 'select * from applications where category_id =:id and active = 1';
+    $sth = $this->dbh->prepare($sql);
+    $result = $sth->execute($params);
+    
+    return $sth->fetchAll(PDO::FETCH_ASSOC);
+  } 
     
 }//class end
