@@ -6,15 +6,14 @@ require APPPATH.'models/applicationsmodel.php';
 
 class Application extends CI_Controller {
     
-    public function index(){
-        if($_SERVER['REQUEST_METHOD'] == 'GET'){
-            $this->view();
-        }
-        elseif($_SERVER['REQUEST_METHOD'] == 'POST'){
-            $this->create();
-        }
+    function index(){
+        
+        $data['title'] = 'Aplications';
+        $data['pageContent'] = "applicationview.php";
+        
+        $this -> load -> view('layout', $data);
     }
-    
+
     function view(){
         $data['title'] = 'Create application';
         $data['pageContent'] = "cerereview.php";
@@ -56,17 +55,16 @@ class Application extends CI_Controller {
         return $result;
     }
 
+
     function getAll(){
         $appModel = new ApplicationModel();
         
         $applications = $appModel-> getAll();
         
         sendResponseToJSON($applications);
-
     }
     
     function user_applications () {
-        require APPPATH.'models/applicationsmodel.php';
         $applicationModel = new ApplicationModel();
         $list = $applicationModel->getApplicationsByUser(1);
         var_dump($list);
