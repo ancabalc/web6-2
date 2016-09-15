@@ -20,6 +20,11 @@ input[type=text],input[type=password]{
     font-size: 15px;
     padding-left: 10px;
 }
+
+.homepage_row {
+    display: inline-block;
+    
+}
 .login-button{
     font-family: "Century Gothic", cursive, sans-serif;
     background: #1FCE6D;
@@ -90,3 +95,5 @@ span{
 header{
     border-bottom: solid;
 }
+
+
