@@ -59,5 +59,9 @@ $route['user-applications'] = 'application/user_applications';
 $route['applications']="Application/index";
 $route['getApps']="Application/getAll";
 
+$route['offers']="Provider/offers_list";
+$route['listOffers']="Provider/getOffers";
+
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
