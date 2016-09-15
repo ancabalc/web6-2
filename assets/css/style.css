@@ -119,3 +119,7 @@ input[type=text],input[type=password],input[type=email]{
 header{
     border-bottom: solid;
 }
+
+.info{
+    margin-left: 20px;
+}
