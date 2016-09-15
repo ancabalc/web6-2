@@ -58,6 +58,8 @@ $route['login'] = 'account/login_user';
 $route['user-applications'] = 'application/user_applications';
 $route['applications']="Application/index";
 $route['getApps']="Application/getAll";
-
+$route['provider/upload'] = 'provider/do_upload';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+
