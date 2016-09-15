@@ -43,4 +43,12 @@ class Application extends CI_Controller {
         sendResponseToJSON($applications);
 
     }
+    
+    function user_applications () {
+        require APPPATH.'models/applicationsmodel.php';
+        $applicationModel = new ApplicationModel();
+        $list = $applicationModel->getApplicationsByUser(1);
+        var_dump($list);
+    }
+    
 }
