@@ -1,4 +1,3 @@
-
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
 <!DOCTYPE html>
@@ -24,6 +23,7 @@
 
     <script type="text/javascript" src="<?php echo base_url();?>/assets/js/helpers/common.js"></script>
 
+    
     <script type="text/javascript" src="<?php echo base_url();?>/assets/js/createFormVaidation.js"></script>
 
     <script src="https://use.fontawesome.com/31bddb0d74.js"></script>

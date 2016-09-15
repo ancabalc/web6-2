@@ -4,30 +4,41 @@ $(function(){
    (function(){
        
        $.ajax({
-           url:"https://project-web2-andreic15.c9users.io/Application/getAll",
+           url: document.location.origin + "/getApps",
            success:function(response){
                
-               console.log(response);
+               // console.log(response);
                
-              var html =' <div class="panel panel-default">';
+              var html ='';
               
-              for(var i in reponse){
-                  html +='<div class="panel-heading">
-    <h3 class="panel-title">Panel title</h3>
-  </div>'
+              for(var i in response){
+                  
+                  html +='<div class="card">';
+                  html +='<div class="card-header">';
+                  html +='<h3 class="panel-title">'+response[i].title+'</h3><br>';
+                  html +='<em> <em>';
+                  html +='</div>';
+                  html +='<div class="card-block">';
+                  html +=response[i]['description'];
+                  html +='</div>';
+                  html +='</div>';
+    
               }
-  
-  <div class="panel-body">
-    Panel content
-  </div>
-</div>
+              
+            $(".applications").html(html);
+            
            }
-           
-           
            
        })
        
-       })() 
+   })() 
     
+   $("[type=checkbox]").change(function(e){
+      // alert("changed!");
+      console.log(e.target.name);
+      
+      
+   })
+   
     
 })

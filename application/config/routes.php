@@ -51,12 +51,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 $route['default_controller'] = 'home';
-$route['app/create'] = 'application/create';
+$route['app/create'] = 'application/view';
+$route['app/save'] = 'application/create';
 $route['create'] = 'account/create';
 $route['login'] = 'account/login_user';
 
 $route['user-applications'] = 'application/user_applications';
-$route['aplications']="Application/index";
+$route['applications']="Application/index";
+$route['applications/list']="Application/getAll";
+$route['getAppsByCat'] = "Application/getAppByCat";
+
+$route['getApps']="Application/getAll";
+$route['provider/upload'] = 'provider/do_upload';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

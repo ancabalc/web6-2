@@ -2,21 +2,50 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 require APPPATH.'helpers/ajax_response.php';
+require APPPATH.'models/applicationsmodel.php';
 
 class Application extends CI_Controller {
     
-    public function create() {
-        require APPPATH . "models/applicationsmodel.php";
+    function index(){
+        
+        $data['title'] = 'Aplications';
+        $data['pageContent'] = "applicationview.php";
+        
+        $this -> load -> view('layout', $data);
+    }
 
-        $data['title'] = 'CREARE CERERE';
+    function view(){
+        $data['title'] = 'Create application';
         $data['pageContent'] = "cerereview.php";
         $data['categories'] = $this->categories();
 
-        var_dump($data['categories']);
-
         $this -> load -> view('layout', $data);
     }
-    
+
+    function create() {
+
+        if(!empty($_POST)){
+
+            foreach ($_POST as $key => $value) {
+                if( !$value ){
+                    ob_clean();
+                    
+                    http_response_code(500);
+                    header('Content-Type: application/json');
+                    $res = json_encode(array("error"=>"Failed to save application!"));
+                    echo $res;
+                }
+            }
+
+            $appModel = new ApplicationModel();
+            
+            $outcome = $appModel->saveApplication($_POST);
+            if(!$outcome){
+                echo 'complain';
+            }
+        }
+    }
+
     function categories() {
         require APPPATH . "models/categoriesmodel.php";
      
@@ -26,17 +55,23 @@ class Application extends CI_Controller {
         return $result;
     }
 
+
     function getAll(){
         $appModel = new ApplicationModel();
         
         $applications = $appModel-> getAll();
         
         sendResponseToJSON($applications);
-
+    }
+    
+    function getAppByCat(){
+        $appModel = new ApplicationModel();
+        $applications = $appModel-> getApplicationsByCateg($_GET['id']);
+        
+        sendResponseToJSON($applications);
     }
     
     function user_applications () {
-        require APPPATH.'models/applicationsmodel.php';
         $applicationModel = new ApplicationModel();
         $list = $applicationModel->getApplicationsByUser(1);
         var_dump($list);
