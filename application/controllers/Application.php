@@ -11,7 +11,13 @@ class Application extends CI_Controller {
 
     }
     
-    
+    function index(){
+        
+        $data['title'] = 'Aplications';
+        $data['pageContent'] = "applicationview.php";
+        
+        $this -> load -> view('layout', $data);
+    }
     
     function getAll(){
         $appModel = new ApplicationModel();

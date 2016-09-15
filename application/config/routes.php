@@ -56,3 +56,4 @@ $route['login'] = 'account/login_user';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['aplications']="Application/index";
+$route['getApps']="Application/getAll";
