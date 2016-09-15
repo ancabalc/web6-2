@@ -2,28 +2,49 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 require APPPATH.'helpers/ajax_response.php';
-echo APPPATH;
+require APPPATH.'models/applicationsmodel.php';
 
 class Application extends CI_Controller {
     
-    public function view(){
-        require APPPATH . "models/applicationsmodel.php";
-
-        $data['title'] = 'CREARE CERERE';
+    public function index(){
+        if($_SERVER['REQUEST_METHOD'] == 'GET'){
+            $this->view();
+        }
+        elseif($_SERVER['REQUEST_METHOD'] == 'POST'){
+            $this->create();
+        }
+    }
+    
+    function view(){
+        $data['title'] = 'Create application';
         $data['pageContent'] = "cerereview.php";
         $data['categories'] = $this->categories();
 
         $this -> load -> view('layout', $data);
     }
 
-    public function create() {
-        require APPPATH . "models/applicationsmodel.php";
+    function create() {
 
-        $data['title'] = 'CREARE CERERE';
-        $data['pageContent'] = "cerereview.php";
-        $data['categories'] = $this->categories();
+        if(!empty($_POST)){
 
-        $this -> load -> view('layout', $data);
+            foreach ($_POST as $key => $value) {
+                if( !$value ){
+                    ob_clean();
+                    
+                    http_response_code(500);
+                    header('Content-Type: application/json');
+                    $res = json_encode(array("error"=>"Failed to save application!"));
+                    echo $res;
+                }
+            }
+
+            $appModel = new ApplicationModel();
+            
+            $outcome = $appModel->saveApplication($_POST);
+            if(!$outcome){
+                echo 'complain';
+            }
+        }
     }
 
     function categories() {

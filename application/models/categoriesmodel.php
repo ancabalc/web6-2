@@ -4,7 +4,7 @@ class CategoriesModel extends DB{
 
     function getCategories(){
 
-        $sql = 'SELECT `title` FROM categories';
+        $sql = 'SELECT * FROM categories';
         $sth = $this->dbh->prepare($sql);
         $sth->execute();
         

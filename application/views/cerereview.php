@@ -1,38 +1,32 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
-    <div class = "button">
-        <a href = "#">Creeaza cerere</a> 
-        <a href = "#">Lista cereri</a> 
+<div class="container">
+  <h1 class="text-xs-center m-t-3"><?php echo $title;?></h1>
+  <form name="createForm" id="createForm" class="form-horizontal m-x-auto m-t-3" style="width:50%;" method="POST">
+    <div class=" row">
+      <div class="form-group col-xs-12">
+        <input id="appSubject" type="text" name="appSubject" class="form-control input-md" placeholder="Application subject"/>
+      </div>
     </div>
-    
-<div class = "cerere-view">
-    <form method="POST">
-       <div class = "col-sm-6">
-        <div class = "cerere-form">
-            <input type="text" name="sumar" placeholder="Sumar cerere"></br>
-            <input type="text" name="categorie" placeholder="Categorie->Select"></br>
-            <input type="text" name="descriere" placeholder="Descriere cerere"></br>
-        <input id="createApp" type="submit" value="Save"/>
-        <select>
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
+    <div class=" row">
+      <div class="form-group col-xs-12">
+        <select id="selectCategory" type="text" name="selectCategory" class="form-control input-md"/>
+          <option value="0">Select category</option>
+          <?php 
+            foreach ($categories as $array) {
+              echo '<option value="'.$array['id'].'">'.$array['title'].'</option>';
+            }
+          ?>
         </select>
-        </div>
-      
-     
-         </div>
-    </form>
-    
-</body>
-</html>
-
-<form = "POST">
-    <input type = "Sumar cerere"placeholder = "Sumar cerere"name
-</form>
+      </div>
+    </div>
+    <div class=" row">
+      <div class="form-group col-xs-12">
+        <input id="appDescription" type="text" name="appDescription" class="form-control input-md" placeholder="Description"/>
+      </div>
+    </div>
+    <div class=" row">
+      <div class="form-group col-xs-12">
+        <input id="createApp" type="submit" name="createApp" class="btn btn-danger btn-block" value="SAVE APPLICATION"/>
+      </div>
+    </div>
+  </form>
+</div>
