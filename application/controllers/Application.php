@@ -2,9 +2,20 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 require APPPATH.'helpers/ajax_response.php';
+echo APPPATH;
 
 class Application extends CI_Controller {
     
+    public function view(){
+        require APPPATH . "models/applicationsmodel.php";
+
+        $data['title'] = 'CREARE CERERE';
+        $data['pageContent'] = "cerereview.php";
+        $data['categories'] = $this->categories();
+
+        $this -> load -> view('layout', $data);
+    }
+
     public function create() {
         require APPPATH . "models/applicationsmodel.php";
 
@@ -12,11 +23,9 @@ class Application extends CI_Controller {
         $data['pageContent'] = "cerereview.php";
         $data['categories'] = $this->categories();
 
-        var_dump($data['categories']);
-
         $this -> load -> view('layout', $data);
     }
-    
+
     function categories() {
         require APPPATH . "models/categoriesmodel.php";
      

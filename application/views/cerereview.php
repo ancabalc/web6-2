@@ -18,6 +18,12 @@
             <input type="text" name="categorie" placeholder="Categorie->Select"></br>
             <input type="text" name="descriere" placeholder="Descriere cerere"></br>
         <input id="createApp" type="submit" value="Save"/>
+        <select>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
         </div>
       
      

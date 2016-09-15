@@ -1,9 +1,7 @@
 <?php
-// require "db.php";
 
 class CategoriesModel extends DB{
-// class CategoriesModel{
-    
+
     function getCategories(){
 
         $sql = 'SELECT `title` FROM categories';
