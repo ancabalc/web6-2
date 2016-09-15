@@ -56,7 +56,8 @@ $route['create'] = 'account/create';
 $route['login'] = 'account/login_user';
 
 $route['user-applications'] = 'application/user_applications';
-$route['aplications']="Application/index";
+$route['applications']="Application/index";
+$route['getApps']="Application/getAll";
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

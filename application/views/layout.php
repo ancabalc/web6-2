@@ -18,6 +18,7 @@
 
     <script type="text/javascript" src="<?php echo base_url();?>/assets/js/helpers/common.js"></script>
 
+    <script type="text/javascript" src="<?php echo base_url();?>/assets/js/getApplications.js"></script>
     <script type="text/javascript" src="<?php echo base_url();?>/assets/js/createFormVaidation.js"></script>
 </head>
 <body>
