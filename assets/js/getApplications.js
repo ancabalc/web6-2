@@ -76,16 +76,14 @@ $(function(){
               
                  for(var i in response){
                      
-                     html +='<div class="card">';
-                     html +='<div class="card-header">';
+                     html +='<div class="panel panel-primary">';
+                     html +='<div class="panel-heading">';
                      html +='<h3 class="panel-title">'+response[i].title+'</h3><br>';
-                     html +='<em> <em>';
                      html +='</div>';
-                     html +='<div class="card-block">';
-                     html +=response[i]['description'];
-                     html +='</div>';
+                     html +='<div class="panel-body">'+response[i]['description']+'</div>';
                      html +='</div>';
        
+
                  }
                  
               $(".applications").html(html);
@@ -103,9 +101,9 @@ $(function(){
 
 
 function listApplications(url){
-    $.ajax({
-           url:url+"/applications/list",
-           
+    
+       $.ajax({
+           url: url + "/getApps",
            success:function(response){
                
                // console.log(response);
@@ -113,15 +111,12 @@ function listApplications(url){
               
               for(var i in response){
                   
-                  html +='<div class="card">';
-                  html +='<div class="card-header">';
-                  html +='<h3 class="panel-title">'+response[i].title+'</h3><br>';
-                  html +='<em> <em>';
-                  html +='</div>';
-                  html +='<div class="card-block">';
-                  html +=response[i]['description'];
-                  html +='</div>';
-                  html +='</div>';
+                  html +='<div class="panel panel-primary">';
+                     html +='<div class="panel-heading">';
+                     html +='<h3 class="panel-title">'+response[i].title+'</h3><br>';
+                     html +='</div>';
+                     html +='<div class="panel-body">'+response[i]['description']+'</div>';
+                     html +='</div>';
               }
               
             $(".applications").html(html);

@@ -1,4 +1,6 @@
-<div class="container">
+<div class="container"><br>
+<br>
+<br>
    <div class="col-sm-3">
       <form method="POST" id="filterform" onsubmit="return false">
         <div class="checkbox">

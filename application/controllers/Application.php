@@ -2,22 +2,10 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 require APPPATH.'helpers/ajax_response.php';
-require APPPATH . "models/applicationsmodel.php";
+require APPPATH.'models/applicationsmodel.php';
 
 class Application extends CI_Controller {
     
-    public function create() {
-
-        $data['title'] = 'CREARE CERERE';
-        $data['pageContent'] = "cerereview.php";
-        $data['categories'] = $this->categories();
-
-        var_dump($data['categories']);
-
-        $this -> load -> view('layout', $data);
-    }
-    
-
     function index(){
         
         $data['title'] = 'Aplications';
@@ -25,7 +13,38 @@ class Application extends CI_Controller {
         
         $this -> load -> view('layout', $data);
     }
-    
+
+    function view(){
+        $data['title'] = 'Create application';
+        $data['pageContent'] = "cerereview.php";
+        $data['categories'] = $this->categories();
+
+        $this -> load -> view('layout', $data);
+    }
+
+    function create() {
+
+        if(!empty($_POST)){
+
+            foreach ($_POST as $key => $value) {
+                if( !$value ){
+                    ob_clean();
+                    
+                    http_response_code(500);
+                    header('Content-Type: application/json');
+                    $res = json_encode(array("error"=>"Failed to save application!"));
+                    echo $res;
+                }
+            }
+
+            $appModel = new ApplicationModel();
+            
+            $outcome = $appModel->saveApplication($_POST);
+            if(!$outcome){
+                echo 'complain';
+            }
+        }
+    }
 
     function categories() {
         require APPPATH . "models/categoriesmodel.php";
@@ -43,7 +62,6 @@ class Application extends CI_Controller {
         $applications = $appModel-> getAll();
         
         sendResponseToJSON($applications);
-
     }
     
     function getAppByCat(){
@@ -54,7 +72,6 @@ class Application extends CI_Controller {
     }
     
     function user_applications () {
-        require APPPATH.'models/applicationsmodel.php';
         $applicationModel = new ApplicationModel();
         $list = $applicationModel->getApplicationsByUser(1);
         var_dump($list);

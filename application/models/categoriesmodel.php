@@ -1,12 +1,10 @@
 <?php
-// require "db.php";
 
 class CategoriesModel extends DB{
-// class CategoriesModel{
-    
+
     function getCategories(){
 
-        $sql = 'SELECT `title` FROM categories';
+        $sql = 'SELECT * FROM categories';
         $sth = $this->dbh->prepare($sql);
         $sth->execute();
         
