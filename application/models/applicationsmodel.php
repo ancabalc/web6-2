@@ -24,10 +24,10 @@ class ApplicationModel extends DB {
   }
   
    function getApplicationsByCateg($id) {
-    $params = [':id' => $id]; 
-    $sql = 'select * from applications where category_id =:id and active = 1';
+    $ids = implode(",",$id);
+    $sql = "select * from applications where category_id in($ids) and active = 1";
     $sth = $this->dbh->prepare($sql);
-    $result = $sth->execute($params);
+    $result = $sth->execute();
     
     return $sth->fetchAll(PDO::FETCH_ASSOC);
   } 
