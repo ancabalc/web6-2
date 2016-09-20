@@ -65,7 +65,7 @@ $route['getApps']="Application/getAll";
 $route['provider/upload'] = 'provider/do_upload';
 
 $route['offers']="Provider/offers_list";
-$route['listOffers']="Provider/getOffers";
+$route['offers/list']="Provider/getOffers";
 
 
 $route['404_override'] = '';

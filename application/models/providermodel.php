@@ -21,16 +21,23 @@
             
             
         // }
-        
+    
         function getOffers(){
-            $params = [':id' => $id, ':user_id' => $user_id, ':details' => $details]; 
             $sql = 'SELECT * from offers where active = 1';
             $sth = $this->dbh->prepare($sql);
-            $sth->execute($params);
+            $sth->execute();
             
-            return $sth->fetch(PDO::FETCH_ASSOC);  
+            return $sth->fetchAll(PDO::FETCH_ASSOC);  
         }
         
+        // Delete article by id
+        function deleteOffer($id) {
+            $params = [':id' => $id]; 
+            $sql = 'UPDATE offers SET active = 0 WHERE id = :id';
+            $sth = $this->dbh->prepare($sql);
+            $sth->execute($params);
+            return $sth->rowCount(); 
+        }
     }
     
 ?>

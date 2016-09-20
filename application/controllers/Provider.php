@@ -2,7 +2,7 @@
 
 
 require APPPATH . "models/providermodel.php";
-
+require APPPATH . "helpers/ajax_response.php";
 
 class Provider extends CI_Controller {
 
@@ -54,6 +54,14 @@ class Provider extends CI_Controller {
           sendResponseToJSON($offers);
         
   }
+        function deleteOffer() {
+        parse_str(file_get_contents("php://input"), $DELETE);
+        
+        $providerModel = new ProviderModel();
+        $result = $providerModel->deleteOffer($DELETE["id"]);
+
+        sendResponseToJSON(array("deleted" => $result));
+    }
 }
 
 // class Provider extends CI_Controller {

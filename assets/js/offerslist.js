@@ -3,22 +3,23 @@
 function listOffers(){
 
     $.ajax({
-        url: window.location.host +  '/listOffers',
+        url: document.location.origin  +  '/offers/list',
         success: function(response) { 
-            var articlesHtml = "";
+            console.log(response);
+            var offersHtml = "";
             for(var i = 0; i < response.length; i++) {
-                articlesHtml += '<div class="row">' +
+                offersHtml += '<div class="row list-group">' +
                                 '<br/>';
-                articlesHtml +='<div class="col-md-4">' + response[i].user_id + '</div>' +
-                                '<div class="col-md-8 offer_details">' + response[i].details + '</div>' +
+                offersHtml +='<div class="col-md-2 list-group-item list-group-item-action list-group-item-info">' + response[i].user_id + '</div>' +
+                                '<div class="col-md-8 offer_details list-group-item list-group-item-action">' + response[i].details + '</div>' +
                                 '<div>' + 
-                                    '<button id="del" class="btn-danger" data-delete-id="' + response[i].id + '">Delete</button>' +
+                                    '<button id="del" class="btn btn-outline-danger" data-delete-id="' + response[i].id + '">Delete</button>' +
                                     '<br/>'+
                                 '</div>' +
                                 '</div>';
      
             }
-            $('.offers_list').html(articlesHtml);
+            $('.offers_list').html(offersHtml);
         }    
     });
 }
@@ -26,4 +27,24 @@ function listOffers(){
 
 $(function(){
     listOffers();
+    
+    // DELETE offer
+    
+     $('.offers_list').on('click', '[data-delete-id]', function() {
+        var id = $(this).data('delete-id');
+        $.ajax({
+            url: document.location.origin + 'admin/articles/delete',
+            method: 'DELETE',
+            data: {'id': id},
+            success: function(response) { 
+                if (response.deleted == 1) {
+                    listOffers();   
+                } 
+                else {
+                    alert("HAHA");
+                }
+            }
+        });    
+    });
+    
 });
