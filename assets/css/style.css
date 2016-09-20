@@ -21,6 +21,11 @@ input[type=text],input[type=password],input[type=email]{
     padding-left: 15px;
     margin-bottom: 10%;
 }
+
+.homepage_row {
+    display: inline-block;
+    
+}
 .login-button{
     font-family: "Century Gothic", cursive, sans-serif;
     background: #1FCE6D;
@@ -109,6 +114,10 @@ input[type=text],input[type=password],input[type=email]{
 
 .col-sm-9{
     text-align: right; 
+}
+
+.applications{
+     text-align: left !important; 
 }
 
 .container{
