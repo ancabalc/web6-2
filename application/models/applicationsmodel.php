@@ -8,7 +8,7 @@ class ApplicationModel extends DB {
       ':user_id' => 1, #expecting user id from login
       ':title' => $data['appSubject'],
       ':description' => $data['appDescription'],
-      ':category_id' => $data['selectCategory'],
+      ':category_id' => $data['categoryId'],
       ':active' => 1
     ];
     $sql = 'insert into applications 
@@ -42,10 +42,10 @@ class ApplicationModel extends DB {
   }
   
    function getApplicationsByCateg($id) {
-    $ids = implode(",",$id);
-    $sql = "select * from applications where category_id in($ids) and active = 1";
+    $params = [':id' => $id]; 
+    $sql = 'select * from applications where category_id =:id and active = 1';
     $sth = $this->dbh->prepare($sql);
-    $result = $sth->execute();
+    $result = $sth->execute($params);
     
     return $sth->fetchAll(PDO::FETCH_ASSOC);
   } 

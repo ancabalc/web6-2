@@ -7,21 +7,21 @@
          <!--name input-->
         <div class=" row">
             <div class="form-group col-xs-12 nume">
-                <input id="nume" name="nume" autocomplete="off" type="text" placeholder="Nume*" class="form-control input-md" >
+                <input id="nume" name="nume" autocomplete="off" type="text" placeholder="Nume*" class="form-control input-md input-app-fix" >
             </div>
         </div>
 
          <!--localitate input-->
         <div class=" row">
             <div class="form-group col-xs-12">
-                <input id="localitate" name="localitate" type="text" placeholder="Localitate*" class="form-control input-md" >
+                <input id="localitate" name="localitate" type="text" placeholder="Localitate*" class="form-control input-md input-app-fix" >
             </div>
         </div>
 
          <!--email input-->
         <div class=" row">
             <div class="form-group col-xs-12">
-                <input id="email" name="email" autocomplete="off" type="text" placeholder="Email*" class="form-control input-md" >
+                <input id="email" name="email" autocomplete="off" type="text" placeholder="Email*" class="form-control input-md input-app-fix" >
             </div>
         </div>
 
@@ -30,7 +30,7 @@
             <div class="form-group col-xs-12">
                 <input id="parola" name="parola" type="password" data-container="body" data-id="create-pass" onkeypress="return cleanInput(event)"
                 data-toggle="popover" data-trigger="focus" data-placement="left" data-content="low"
-                Popover on left data-id="create-pass" placeholder="Parola*" class="form-control input-md" >
+                Popover on left data-id="create-pass" placeholder="Parola*" class="form-control input-md input-app-fix" >
                 <div id="pass-meter" class="pass-meter">
                     <div id="pass-meter-1" class="single-meter"></div>
                     <div id="pass-meter-2" class="single-meter"></div>
@@ -45,7 +45,7 @@
          <!--Password input-->
         <div class=" row">
             <div class="form-group col-xs-12">
-                <input id="reParola" name="reparola" type="password" placeholder="Reintrodu parola*" class="form-control input-md" >
+                <input id="reParola" name="reparola" type="password" placeholder="Reintrodu parola*" class="form-control input-md input-app-fix" >
             </div>
         </div>
 

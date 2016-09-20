@@ -3,12 +3,12 @@
   <form name="createForm" id="createForm" class="form-horizontal m-x-auto m-t-3" style="width:50%;" method="POST">
     <div class=" row">
       <div class="form-group col-xs-12">
-        <input id="appSubject" type="text" name="appSubject" class="form-control input-md" placeholder="Application subject"/>
+        <input id="appSubject" type="text" name="appSubject" class="form-control input-md input-app-fix" placeholder="Application subject"/>
       </div>
     </div>
     <div class=" row">
       <div class="form-group col-xs-12">
-        <select id="selectCategory" type="text" name="selectCategory" class="form-control input-md"/>
+        <select id="selectCategory" type="text" name="selectCategory" class="form-control input-md input-app-fix"/>
           <option value="0">Select category</option>
           <?php 
             foreach ($categories as $array) {
@@ -20,12 +20,12 @@
     </div>
     <div class=" row">
       <div class="form-group col-xs-12">
-        <input id="appDescription" type="text" name="appDescription" class="form-control input-md" placeholder="Description"/>
+        <input id="appDescription" type="text" name="appDescription" class="form-control input-md input-app-fix" placeholder="Description"/>
       </div>
     </div>
     <div class=" row">
       <div class="form-group col-xs-12">
-        <input id="createApp" type="submit" name="createApp" class="btn btn-danger btn-block" value="SAVE APPLICATION"/>
+        <input id="createApp" class="btn btn-danger btn-block" value="SAVE APPLICATION"/>
       </div>
     </div>
   </form>
