@@ -1,6 +1,9 @@
 <?php
 
 
+require APPPATH . "models/providermodel.php";
+require APPPATH . "helpers/ajax_response.php";
+
 class Provider extends CI_Controller {
 
         public function __construct()
@@ -37,6 +40,28 @@ class Provider extends CI_Controller {
                         $this->load->view('providerviewsucces', $data);
                 }
         }
+        
+        function offers_list(){
+          $data['title'] = 'Offers list';
+          $data['pageContent'] = "offersview.php";
+          $this -> load -> view('layout', $data);
+        }
+        
+        function getOffers(){
+          $providerModel = new ProviderModel();
+          $offers = $providerModel-> getOffers();
+              
+          sendResponseToJSON($offers);
+        
+  }
+        function deleteOffer() {
+        parse_str(file_get_contents("php://input"), $DELETE);
+        
+        $providerModel = new ProviderModel();
+        $result = $providerModel->deleteOffer($DELETE["id"]);
+
+        sendResponseToJSON(array("deleted" => $result));
+    }
 }
 
 // class Provider extends CI_Controller {
@@ -45,7 +70,6 @@ class Provider extends CI_Controller {
 //         $data['title'] = 'view provider';
 //         $data['pageContent'] = "providerview.php";
 //         $this -> load -> view('layout', $data);
-        
 //     }
 // }
 

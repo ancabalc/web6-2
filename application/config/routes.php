@@ -64,5 +64,9 @@ $route['applications']="Application/index";
 $route['getApps']="Application/getApps";
 $route['provider/upload'] = 'provider/do_upload';
 
+$route['offers']="Provider/offers_list";
+$route['offers/list']="Provider/getOffers";
+
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
