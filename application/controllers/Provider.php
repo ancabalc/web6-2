@@ -66,12 +66,18 @@ class Provider extends CI_Controller {
         }
         
         function addOffer(){
+          $_POST['user_id'] = rand (1 , 3);
           $providerModel = new ProviderModel();
           $offers = $providerModel-> addOffer($_POST);
           
           sendResponseToJSON($offers);
         }
   
+        function offersTab(){
+          $data['title'] = 'Provider Offers';
+          $data['pageContent'] = "provideroffersview.php";
+          $this -> load -> view('layout', $data);
+        }
 }
 
 // class Provider extends CI_Controller {

@@ -70,5 +70,7 @@ $route['offers/list']="Provider/getOffers";
 $route['createOffer']="Provider/createOffer";
 $route['offers/add']="Provider/addOffer";
 
+$route['providerOffers']="Provider/offersTab";
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

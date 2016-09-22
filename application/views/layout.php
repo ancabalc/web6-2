@@ -34,7 +34,7 @@
 </head>
 <body>
     <header>
-                <nav class="navbar navbar-light bg-faded">
+            <nav class="navbar navbar-light bg-faded">
                 <a class="navbar-brand" href="#page-top">LOGO</a>
                     <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">&#9776;</button>
                     <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
@@ -43,7 +43,7 @@
                           <a class="nav-link" href="<?php echo base_url();?>">Cereri <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="<?php echo base_url();?>offers">Oferte </a>
+                          <a class="nav-link" href="<?php echo base_url();?>providerOffers">Oferte </a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="<?php echo base_url();?>create">Creaza cont</a>
@@ -53,9 +53,7 @@
                         </li>
                       </ul>
                       </div>
-                </nav>
-        <!--</nav>-->
-        <!--</div>-->
+            </nav>
     </header>
     
     
@@ -64,13 +62,13 @@
     </div>
     
     <footer>
-        footer
+        
     </footer>
     
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/umd/tooltip.js" integrity="sha256-ziCfLy91WAidvbK53uuAfylbZ/UvOKVn/X+Q32qBfxI=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="<?php echo base_url();?>/assets/js/passwordsafety.js"></script>
-    <script type="text/javascript" src="<?php echo base_url();?>/assets/js/offerslist.js"></script>
     <script type="text/javascript" src="<?php echo base_url();?>/assets/js/createApp.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>assets/js/offerslist.js"></script>
    
 </body>
 </html>

@@ -29,7 +29,7 @@
             </div>
             <div class="form-check">
                 <label class="form-check-label">
-                <input type="checkbox" class="form-check-input">Sunt de acord cu termenii si conditiile...</label>
+                <input type="checkbox" class="form-check-input"> Publica !</label>
             </div>
             <button type="submit" class="btn btn-primary" id="add_offer">Submit</button>
         </form>

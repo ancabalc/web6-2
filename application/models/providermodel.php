@@ -44,8 +44,8 @@
         // ADD offer
         
         function addOffer($offer) {
-            $params = [':details' => $offer["details"], ':category_id' => $offer["category_id"], ':price' => $offer["price"], ':price' => $offer["price"]]; 
-            $sql = "INSERT INTO offers(details, category_id, price) VALUES (:details, :category_id, :price)";
+            $params = [':user_id' => $offer["user_id"], ':details' => $offer["details"], ':category_id' => $offer["category_id"], ':price' => $offer["price"], ':price' => $offer["price"]]; 
+            $sql = "INSERT INTO offers(user_id, details, category_id, price) VALUES (:user_id, :details, :category_id, :price)";
             $sth = $this->dbh->prepare($sql);
             $result = $sth->execute($params);
             return $sth->rowCount();
