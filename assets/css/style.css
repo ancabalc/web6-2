@@ -8,6 +8,7 @@
     background-color: transparent;
     box-shadow: 0px 5px 30px #777;
 }
+
 input[type=text],input[type=password],input[type=email]{
     font-family: "Century Gothic", cursive, sans-serif;
     width: 300px;
@@ -132,6 +133,7 @@ header{
 .info{
     margin-left: 20px;
 }
+
 .alignment-c {
     text-align: center;
 }
@@ -152,3 +154,22 @@ header{
     background-repeat: no-repeat;
     background-position-x: right;
 }
+
+.input-app-fix {
+    font-family: "Century Gothic", cursive, sans-serif;
+    width: 100%;
+    padding: 7px 0px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #435160;
+    outline: none;
+    color: #6D7781;
+    font-size: 15px;
+    padding-left: 15px;
+    margin: 5px auto;
+}
+
+#appDescription {
+    height: 200px;
+}
+

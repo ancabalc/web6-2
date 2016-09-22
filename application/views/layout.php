@@ -34,14 +34,6 @@
 </head>
 <body>
     <header>
-        <!--<div class="menu-top">-->
-        <!--<nav class="navbar navbar-default navbar-fixed-top" role="navigation">-->
-                <!--<div class="navbar-header">-->
-                    <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menu-collapse">-->
-                    <!--    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>-->
-                    <!--</button>-->
-                    
-                <!--</div>-->
                 <nav class="navbar navbar-light bg-faded">
                 <a class="navbar-brand" href="#page-top">LOGO</a>
                     <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">&#9776;</button>
@@ -78,6 +70,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/umd/tooltip.js" integrity="sha256-ziCfLy91WAidvbK53uuAfylbZ/UvOKVn/X+Q32qBfxI=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="<?php echo base_url();?>/assets/js/passwordsafety.js"></script>
     <script type="text/javascript" src="<?php echo base_url();?>/assets/js/offerslist.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>/assets/js/createApp.js"></script>
    
 </body>
 </html>

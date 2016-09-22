@@ -23,17 +23,20 @@ class Application extends CI_Controller {
     }
 
     function create() {
-
+        $expected_dt = array(
+            'subject' => 'appSubject', 
+            'description' => 'appDescription', 
+            'category' => 'categoryId'
+        );
+        
         if(!empty($_POST)){
-
-            foreach ($_POST as $key => $value) {
-                if( !$value ){
+            foreach ($expected_dt as $name => $nref){
+                if( !$_POST[$nref] or 
+                    ( $nref == 'categoryId' && $_POST[$nref] = 0 )
+                    ){
                     ob_clean();
-                    
-                    http_response_code(500);
-                    header('Content-Type: application/json');
-                    $res = json_encode(array("error"=>"Failed to save application!"));
-                    echo $res;
+                    http_response_code(400);
+                    sendResponseToJSON(array("message"=>"Incomplete data provided for ". $name ."!"));
                 }
             }
 
@@ -41,7 +44,14 @@ class Application extends CI_Controller {
             
             $outcome = $appModel->saveApplication($_POST);
             if(!$outcome){
-                echo 'complain';
+                ob_clean();
+                http_response_code(500);
+                sendResponseToJSON(array("message"=>"Failed to save application!"));
+            }
+            else {
+                ob_clean();
+                http_response_code(200);
+                sendResponseToJSON(array("message"=>"Application saved succesfully !"));
             }
         }
     }
@@ -64,9 +74,9 @@ class Application extends CI_Controller {
         sendResponseToJSON($applications);
     }
     
-    function getAppByCat(){
+    function getApps(){
         $appModel = new ApplicationModel();
-        $applications = $appModel-> getApplicationsByCateg($_POST['categories']);
+        $applications = $appModel-> getApps($_POST);
             
         sendResponseToJSON($applications);
     }

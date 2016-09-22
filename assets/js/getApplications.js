@@ -1,13 +1,13 @@
 /*global $*/
 $(function(){
     
-   (function(){
        var url= window.location.origin;
+  
        console.log(url);
       
       // list apps on load
-       listApplications(url);
-       
+    //   listApplications(url);
+       getApps();
        
       //  list apps on filter change
         // $('[name="categories[]"]').change(function(){
@@ -58,52 +58,19 @@ $(function(){
         var formData = $('#filterform').serialize();
         console.log(formData);
             
-        //if filters are empty load all list  
-            if(formData === 'localitate=Localitate'){
-              listApplications(url);
-            }
-            
          // ajax call for filters active
          
-          $.ajax({
-             url:url+"/getAppsByCat",
-             method:"POST",
-             data:formData,
-              success:function(response){
-                 console.log(response);
-                 
-                  var html ='';
-              
-                 for(var i in response){
-                     
-                     html +='<div class="panel panel-primary">';
-                     html +='<div class="panel-heading">';
-                     html +='<h3 class="panel-title">'+response[i].title+'</h3><br>';
-                     html +='</div>';
-                     html +='<div class="panel-body">'+response[i]['description']+'</div>';
-                     html +='</div>';
-       
-
-                 }
-                 
-              $(".applications").html(html);
-                    
-                 }
-              
-              
-          })
+           getApps(formData);
            
        })
        
-   })() 
+  
+function getApps(formData){
     
-})
-
-
-function listApplications(url){
-    
-       $.ajax({
+      $.ajax({
            url: url + "/getApps",
+           method:"POST",
+           data:formData || {},
            success:function(response){
                
                // console.log(response);
@@ -125,3 +92,5 @@ function listApplications(url){
            
        })
 }
+
+})
