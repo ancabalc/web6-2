@@ -64,9 +64,9 @@ class Application extends CI_Controller {
         sendResponseToJSON($applications);
     }
     
-    function getAppByCat(){
+    function getApps(){
         $appModel = new ApplicationModel();
-        $applications = $appModel-> getApplicationsByCateg($_POST['categories']);
+        $applications = $appModel-> getApps($_POST);
             
         sendResponseToJSON($applications);
     }

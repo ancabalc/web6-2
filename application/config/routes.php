@@ -58,10 +58,10 @@ $route['login'] = 'account/login_user';
 
 $route['user-applications'] = 'application/user_applications';
 $route['applications']="Application/index";
-$route['applications/list']="Application/getAll";
-$route['getAppsByCat'] = "Application/getAppByCat";
+// $route['applications/list']="Application/getAll";
+// $route['getAppsByCat'] = "Application/getAppByCat";
 
-$route['getApps']="Application/getAll";
+$route['getApps']="Application/getApps";
 $route['provider/upload'] = 'provider/do_upload';
 
 $route['404_override'] = '';

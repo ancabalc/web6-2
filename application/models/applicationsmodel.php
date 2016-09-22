@@ -31,19 +31,24 @@ class ApplicationModel extends DB {
     return $sth->fetchAll(PDO::FETCH_ASSOC);
   } 
 
-  function getAll(){
+  // function getAll(){
     
-    $sql = 'SELECT * FROM applications WHERE active = 1';
-    $sth = $this->dbh-> prepare($sql);
-    $sth->execute();
+  //   $sql = 'SELECT * FROM applications WHERE active = 1';
+  //   $sth = $this->dbh-> prepare($sql);
+  //   $sth->execute();
     
-    return $sth->fetchAll(PDO::FETCH_ASSOC);
+  //   return $sth->fetchAll(PDO::FETCH_ASSOC);
 
-  }
+  // }
   
-   function getApplicationsByCateg($id) {
-    $ids = implode(",",$id);
-    $sql = "select * from applications where category_id in($ids) and active = 1";
+   function getApps($filters) {
+     
+    $ids = (!empty($filters['categories']))? implode(",",$filters['categories']): '';
+    $categories = (!empty($filters['categories']))? "and category_id in($ids)":"";
+    $city = (!empty($filters['localitate']))? "and city_id =".$filters['localitate']:''; 
+    
+    $sql = "select * from applications where active = 1 $categories $city";
+    // echo $sql;
     $sth = $this->dbh->prepare($sql);
     $result = $sth->execute();
     
