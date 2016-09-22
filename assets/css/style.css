@@ -9,19 +9,19 @@
     box-shadow: 0px 5px 30px #777;
 }
 
-/*input[type=text],input[type=password],input[type=email]{*/
-/*    font-family: "Century Gothic", cursive, sans-serif;*/
-/*    width: 300px;*/
-/*    padding: 7px 0px;*/
-/*    background: transparent;*/
-/*    border: 0;*/
-/*    border-bottom: 1px solid #435160;*/
-/*    outline: none;*/
-/*    color: #6D7781;*/
-/*    font-size: 15px;*/
-/*    padding-left: 15px;*/
-/*    margin-bottom: 10%;*/
-/*}*/
+input[type=text],input[type=password],input[type=email]{
+    font-family: "Century Gothic", cursive, sans-serif;
+    width: 300px;
+    padding: 7px 0px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #435160;
+    outline: none;
+    color: #6D7781;
+    font-size: 15px;
+    padding-left: 15px;
+    margin-bottom: 10%;
+}
 
 .homepage_row {
     display: inline-block;
@@ -134,6 +134,27 @@ header{
     margin-left: 20px;
 }
 
+.alignment-c {
+    text-align: center;
+}
+.alignment {
+    text-align: right;
+    padding-top: 12px;
+}
+.wrapper{
+    padding-top: 50px;
+}
+/*.container{*/
+/*    -webkit-box-shadow: 0px 4px 20px 0px rgba(0,0,0,0.75);*/
+/*    -moz-box-shadow: 0px 4px 20px 0px rgba(0,0,0,0.75);*/
+/*    box-shadow: 0px 4px 20px 0px rgba(0,0,0,0.75);*/
+/*}*/
+.has-success .form-control-success,
+.has-danger .form-control-danger{
+    background-repeat: no-repeat;
+    background-position-x: right;
+}
+
 .input-app-fix {
     font-family: "Century Gothic", cursive, sans-serif;
     width: 100%;
@@ -151,3 +172,4 @@ header{
 #appDescription {
     height: 200px;
 }
+

@@ -58,15 +58,19 @@ $route['login'] = 'account/login_user';
 
 $route['user-applications'] = 'application/user_applications';
 $route['applications']="Application/index";
-$route['applications/list']="Application/getAll";
-$route['getAppsByCat'] = "Application/getAppByCat";
+// $route['applications/list']="Application/getAll";
+// $route['getAppsByCat'] = "Application/getAppByCat";
 
-$route['getApps']="Application/getAll";
+$route['getApps']="Application/getApps";
 $route['provider/upload'] = 'provider/do_upload';
 
 $route['offers']="Provider/offers_list";
 $route['offers/list']="Provider/getOffers";
 
+$route['createOffer']="Provider/createOffer";
+$route['offers/add']="Provider/addOffer";
+
+$route['providerOffers']="Provider/offersTab";
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

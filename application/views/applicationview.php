@@ -15,11 +15,11 @@
         </div>
         <select name="localitate" class="form-control">
           <!--<option selected disabled hidden>Localitate</option>-->
-          <option selected>Localitate</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
+          <option selected value=''>Localitate</option>
+          <option value='1'>1</option>
+          <option value='2'>2</option>
+          <option value='3'>3</option>
+          <option value='4'>4</option>
         </select><br>
         <button type="submit" name="submit" class="btn searchapp btn-default">Search</button>
       </form> 

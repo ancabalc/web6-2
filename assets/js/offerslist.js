@@ -10,13 +10,19 @@ function listOffers(){
             for(var i = 0; i < response.length; i++) {
                 offersHtml += '<div class="row list-group">' +
                                 '<br/>';
-                offersHtml +='<div class="col-md-2 list-group-item list-group-item-action list-group-item-info">' + response[i].user_id + '</div>' +
-                                '<div class="col-md-8 offer_details list-group-item list-group-item-action">' + response[i].details + '</div>' +
-                                '<div>' + 
-                                    '<button id="del" class="btn btn-outline-danger" data-delete-id="' + response[i].id + '">Delete</button>' +
-                                    '<br/>'+
-                                '</div>' +
-                                '</div>';
+                offersHtml +='<div class=" col-md-2 list-group-item list-group-item-info alignment-c">' + response[i].name + '</div>' +
+                                
+                                '<div class="col-md-8">' + 
+                                    '<div class="col-md-2 alignment">' + '<b> Details: </b>' +'</div>' +
+                                    '<div class="col-md-10 offer_details list-group-item ">' + response[i].details + '</div>' + 
+                                    '<div class="col-md-2 alignment">' + '<b> Category: </b>' +'</div>' +
+                                    '<div class="col-md-10 offer_details list-group-item ">' + response[i].category + '</div>' +
+                                    '<div class="col-md-2 alignment">' + '<b> Price: </b>' +'</div>' +
+                                    '<div class=" col-md-10 offer_details list-group-item ">' + response[i].price + '</div>' +
+                                    '<div class="col-md-2 alignment">' + '<b> Time: </b>' +'</div>' +
+                                    '<div class="col-md-10 offer_details list-group-item ">' + response[i].time + '</div>' +
+                                '</div>' + 
+                             '</div><br/>';
      
             }
             $('.offers_list').html(offersHtml);
@@ -28,23 +34,33 @@ function listOffers(){
 $(function(){
     listOffers();
     
-    // DELETE offer
+    // ADD offer
     
-     $('.offers_list').on('click', '[data-delete-id]', function() {
-        var id = $(this).data('delete-id');
+    $('#add_offer').on('click',function(){
+        var inputData = $('#createOfferForm').serialize();
         $.ajax({
-            url: document.location.origin + 'admin/articles/delete',
-            method: 'DELETE',
-            data: {'id': id},
-            success: function(response) { 
-                if (response.deleted == 1) {
-                    listOffers();   
-                } 
+            url: document.location.origin + '/offers/add',
+            data: inputData, 
+            method: "POST",            
+            success: function (response) {
+                if (response == 1) {
+                    $('#createOfferForm')[0].reset();
+                }
                 else {
-                    alert("HAHA");
+                    alert ("You failed ! hah");
                 }
             }
-        });    
+        });
     });
     
+    $('.nav-link').click(function (e) {
+        $(".nav-link").removeClass("active");
+        $(this).tab('show');
+        
+        
+    });
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        e.target; // newly activated tab
+        e.relatedTarget; // previous active tab
+    });
 });
