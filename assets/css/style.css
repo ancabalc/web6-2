@@ -132,3 +132,23 @@ header{
 .info{
     margin-left: 20px;
 }
+.alignment-c {
+    text-align: center;
+}
+.alignment {
+    text-align: right;
+    padding-top: 12px;
+}
+.wrapper{
+    padding-top: 100px;
+}
+/*.container{*/
+/*    -webkit-box-shadow: 0px 4px 20px 0px rgba(0,0,0,0.75);*/
+/*    -moz-box-shadow: 0px 4px 20px 0px rgba(0,0,0,0.75);*/
+/*    box-shadow: 0px 4px 20px 0px rgba(0,0,0,0.75);*/
+/*}*/
+.has-success .form-control-success,
+.has-danger .form-control-danger{
+    background-repeat: no-repeat;
+    background-position-x: right;
+}

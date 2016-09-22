@@ -67,6 +67,8 @@ $route['provider/upload'] = 'provider/do_upload';
 $route['offers']="Provider/offers_list";
 $route['offers/list']="Provider/getOffers";
 
+$route['createOffer']="Provider/createOffer";
+$route['offers/add']="Provider/addOffer";
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

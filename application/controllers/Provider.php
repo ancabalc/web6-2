@@ -41,27 +41,37 @@ class Provider extends CI_Controller {
                 }
         }
         
+        // LIST offers
+       
+        function getOffers(){
+          $providerModel = new ProviderModel();
+          $offers = $providerModel-> getOffers();
+              
+          sendResponseToJSON($offers);
+        }
+        
         function offers_list(){
           $data['title'] = 'Offers list';
           $data['pageContent'] = "offersview.php";
           $this -> load -> view('layout', $data);
         }
         
-        function getOffers(){
+        
+        // ADD offers
+        
+        function createOffer(){
+          $data['title'] = 'Create Offer';
+          $data['pageContent'] = "addofferview.php";
+          $this -> load -> view('layout', $data);
+        }
+        
+        function addOffer(){
           $providerModel = new ProviderModel();
-          $offers = $providerModel-> getOffers();
-              
+          $offers = $providerModel-> addOffer($_POST);
+          
           sendResponseToJSON($offers);
-        
-  }
-        function deleteOffer() {
-        parse_str(file_get_contents("php://input"), $DELETE);
-        
-        $providerModel = new ProviderModel();
-        $result = $providerModel->deleteOffer($DELETE["id"]);
-
-        sendResponseToJSON(array("deleted" => $result));
-    }
+        }
+  
 }
 
 // class Provider extends CI_Controller {

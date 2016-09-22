@@ -21,23 +21,36 @@
             
             
         // }
-    
+        
+        // LIST offers
+        
         function getOffers(){
-            $sql = 'SELECT * from offers where active = 1';
+            $sql = 'SELECT 
+                    offers.details,
+                    users.name,
+                    categories.title as category,
+                    offers.price,
+                    offers.time
+                    FROM offers 
+                    INNER JOIN users ON users.id = offers.user_id  
+                    INNER JOIN categories ON offers.category_id = categories.id
+                    WHERE active = 1';
             $sth = $this->dbh->prepare($sql);
             $sth->execute();
             
             return $sth->fetchAll(PDO::FETCH_ASSOC);  
         }
         
-        // Delete article by id
-        function deleteOffer($id) {
-            $params = [':id' => $id]; 
-            $sql = 'UPDATE offers SET active = 0 WHERE id = :id';
+        // ADD offer
+        
+        function addOffer($offer) {
+            $params = [':details' => $offer["details"], ':category_id' => $offer["category_id"], ':price' => $offer["price"], ':price' => $offer["price"]]; 
+            $sql = "INSERT INTO offers(details, category_id, price) VALUES (:details, :category_id, :price)";
             $sth = $this->dbh->prepare($sql);
-            $sth->execute($params);
-            return $sth->rowCount(); 
+            $result = $sth->execute($params);
+            return $sth->rowCount();
         }
+        
     }
     
 ?>
