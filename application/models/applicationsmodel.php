@@ -52,7 +52,7 @@ class ApplicationModel extends DB {
     // echo $sql;
 
     $sth = $this->dbh->prepare($sql);
-    $result = $sth->execute($params);
+    $result = $sth->execute();
     
     return $sth->fetchAll(PDO::FETCH_ASSOC);
   } 
